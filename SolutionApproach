@@ -1,0 +1,39 @@
+### Solution Approach
+
+The approach to solving the Order Book Management System involves several key steps: defining the necessary data structures, implementing classes to manage the orders and handle price updates, and integrating these components to execute orders based on real-time ticks. Here's a detailed breakdown of the solution approach:
+
+#### 1. Define Data Structures
+We start by defining the essential data structures to represent orders and ticks.
+
+- **Order Structure**: Represents a financial order with attributes such as order ID, symbol, type, price, quantity, and status.
+- **Tick Structure**: Represents a market price update with attributes such as symbol, timestamp, and price.
+
+These structures are defined in their respective header files (`Order.h` and `Tick.h`) and implemented in source files (`Order.cpp` and `Tick.cpp`).
+
+#### 2. Implement the OrderBook Class
+The `OrderBook` class is responsible for managing the orders and processing ticks. It includes methods to add orders, handle incoming ticks, and execute orders based on predefined conditions.
+
+- **addOrder**: Adds an order to the order book. Orders are stored in a map with the symbol as the key and a vector of orders as the value.
+- **handleTick**: Processes an incoming tick. It iterates through the pending orders for the given symbol and executes the orders if the tick's price meets the order's conditions (e.g., a Buy Limit order is executed if the tick price is less than or equal to the order price).
+- **printExecutionDetails**: Prints the details of executed orders, including order ID, execution time, price, and quantity.
+
+The `OrderBook` class is defined in the header file (`OrderBook.h`) and implemented in the source file (`OrderBook.cpp`).
+
+#### 3. Main Function
+The `main.cpp` file contains the main function, which serves as the entry point of the program. The main function performs the following tasks:
+
+- Creates an instance of the `OrderBook` class.
+- Adds a set of pending orders to the order book.
+- Processes a stream of ticks, updating the order book and triggering order executions as necessary.
+- Prints the details of executed orders.
+
+#### 4. Compilation and Execution
+To compile and run the program, we use a C++ compiler (`g++`) to compile the source files and generate an executable. The program is then executed, processing the predefined orders and ticks and printing the execution details.
+
+#### Code Comments
+The code includes detailed comments explaining the purpose and functionality of each part, ensuring clarity and maintainability. This includes comments at the beginning of each file, before each class and method, and within the code to describe specific logic and operations.
+
+### Conclusion
+This structured approach ensures that the Order Book Management System is modular, maintainable, and efficient in processing real-time market data and executing orders. By separating the code into header and source files and providing clear comments, the solution is easy to understand and extend.
+
+This section provides a comprehensive overview of the solution approach, explaining the design and implementation decisions made throughout the project.

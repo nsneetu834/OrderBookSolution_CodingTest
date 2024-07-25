@@ -9,19 +9,6 @@ This project implements an Order Book Management System in C++. It processes and
 - Execute buy limit orders based on price conditions.
 - Print execution details of triggered orders.
 
-## Project Structure
-
-order_book_project/
-├── include/
-│ ├── Order.h
-│ ├── Tick.h
-│ └── OrderBook.h
-├── src/
-│ ├── Order.cpp
-│ ├── Tick.cpp
-│ └── OrderBook.cpp
-└── main.cpp
-
 
 ## Files and Directories
 - **include/**: Contains header files for the `Order`, `Tick`, and `OrderBook` classes.
